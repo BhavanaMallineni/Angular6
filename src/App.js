@@ -1,28 +1,30 @@
-import React, { Component, ReactPropTypes } from 'react';
-import logo from './logo.svg';
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import React, { Component } from 'react';
+import {BrowserRouter} from 'react-router-dom';
+import {Provider} from 'react-redux';
+import {ConfigureStore} from './redux/configStore';
+
 import './App.css';
-import Button from 'antd/lib/button';
-import Menu from './compoents/MenuComponent';
-import {Navbar,NavbarBrand} from 'reactstrap';
+import Main from './components/MainComponent';
+const store = ConfigureStore();
 class App extends Component {
+  constructor(props){
+    super(props);
+  
+}
   render() {
     return (
-     
-
-      <div className="container-fluid">
-         <Navbar dark color="primary">
-         <div className="container">
-         <NavbarBrand href="/">Matrimony Site</NavbarBrand>
-         </div>
-         </Navbar>
-         <Menu/>
-       </div>
+      <Provider store={store}>
+      <BrowserRouter>
+      <div className="App">
       
+   
+        <Main />
+        </div>
+   
+      </BrowserRouter>
+      </Provider>
     );
   }
 }
-App.propTypes = {
-  children: ReactPropTypes.object.isRequired
-};
+
 export default App;
