@@ -1,8 +1,12 @@
 import React, { Component } from 'react';
-import { 
-            Button,  Label,  Col, Row } from 'reactstrap';
+import { Button,  Label,  Col, Row } from 'reactstrap';
 import {Control,LocalForm} from 'react-redux-form';
-            class Contact extends Component {
+         
+
+
+
+
+class Contact extends Component {
 
     constructor(props) {
         super(props);
